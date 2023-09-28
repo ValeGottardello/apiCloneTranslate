@@ -1,7 +1,7 @@
 import express, { json } from 'express';
 import cors from 'cors';
 import { translate } from './openAi.js';
-import { refererCheck } from './refererCheck.js';
+import { refererCheck } from './middleware.js';
 
 const app = express();
 const port = 3000;
