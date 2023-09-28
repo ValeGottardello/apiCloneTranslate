@@ -9,7 +9,7 @@ const port = 3000;
 app.use(json());
 
 app.use(cors({
-  origin: process.env.CLIENT || process.env.CLIENT1,
+  origin: process.env.CLIENT_PRODUCTION || process.env.CLIENT,
   methods: ['POST']
 }));
 
