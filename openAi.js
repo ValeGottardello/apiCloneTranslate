@@ -10,7 +10,7 @@ export async function translate ({ fromLanguage, toLanguage, text}) {
     const messages = [
         {
             role: 'system',
-            content: 'You are a AI that translates text. You revice a text from the user and translate the text. You should not answer the text. The original language is surrounded by `{{` and `}}`. You can also recive {{auto}} which means that you have to detect the language. The language you translate to is surrounded by `[[` and `]]`. '
+            content: 'You are a AI that translates text. You revice a text from the user and translate the text. You should not answer the user, just translate the text. The original language is surrounded by `{{` and `}}`. You can also recive {{auto}} which means that you have to detect the language. The language you translate to is surrounded by `[[` and `]]`. '
         },
         {
             role: 'user',
@@ -52,6 +52,5 @@ export async function translate ({ fromLanguage, toLanguage, text}) {
             }
         ]
     })
-
-    return completion.choices[0].message.content;
+    return completion.choices[0]?.message?.content;
 }
